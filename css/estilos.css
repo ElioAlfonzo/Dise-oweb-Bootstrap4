@@ -1,0 +1,269 @@
+/*
+    Principal: #12afaf;
+    texto: #111111;
+    secundario: #009500;
+*/
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #111111;
+}
+
+
+/*Seccion principal Bienvenidos*/
+
+
+/*center: centrada en el horizontal, top: hacia arriba en el vertical*/
+
+.bienvenidos {
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    color: white;
+    /*color de todo el texto*/
+    background-size: cover;
+    /*hace q la imagen se muestre lo mejor posible tanto anchura como altura*/
+    height: 100vh;
+    /*vh: viewport es todo lo q se ve en la pantalla, height: la altura, 100%*/
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    background: #111111;
+    color: #fff;
+    padding: .5rem 0;
+}
+
+.encabezado .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.encabezado .logo img {
+    width: 150px;
+    height: auto;
+}
+
+
+/*Estilos Boton de  Buscar y Menu*/
+
+.boton-buscar,
+.boton-menu {
+    border: 0;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 .5rem;
+    background: transparent;
+    color: white;
+}
+
+.boton-buscar:focus,
+.boton-menu:focus {
+    /*No exista los bordesitos al focus*/
+    outline: 0;
+}
+
+.boton-buscar {
+    margin-left: auto;
+    margin-right: .8rem;
+}
+
+
+/*Estilos del Bloque Buscar*/
+
+#bloque-buscar {
+    /*para que ocupe el 100% de la fila*/
+    flex: 1 1 100%;
+}
+
+.contenedor-bloque-buscar {
+    display: flex;
+    height: 3rem;
+    margin: 1rem 0;
+}
+
+.contenedor-bloque-buscar input:focus {
+    /*elimina los bordestos al presionar click*/
+    outline: 0;
+}
+
+.contenedor-bloque-buscar input[type="text"] {
+    border: 0;
+    border-radius: 5px 0px 0px 5px;
+    padding: 1rem;
+}
+
+.contenedor-bloque-buscar input[type="submit"] {
+    flex: 1 1 auto;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    background: #12afaf;
+    color: white;
+}
+
+
+/*Estilos para los elementos del Menu-Principal*/
+
+#menu-principal {
+    flex: 1 1 100%;
+}
+
+#menu-principal ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+
+#menu-principal ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+    text-decoration: none;
+}
+
+#menu-principal ul a:hover,
+#menu-principal ul li.active a {
+    color: #12afaf;
+}
+
+
+/*Alineacion y uso del flex en el texto-encabezado*/
+
+.texto-encabezado {
+    flex: 1 1 auto;
+    display: flex;
+    /*alineacion flex*/
+    align-items: center;
+    /*en el eje y*/
+}
+
+
+/*Modificando el texto de encabezado para que no se oculte en el navbar*/
+
+.texto-encabezado .display-4 {
+    margin-top: 4rem;
+}
+
+
+/*Modificando el tamaño del texto de bootstrap displa 4*/
+
+.display-4 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+
+/*Boton de Contactanos*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #12afaf;
+    border-color: transparent;
+    margin-top: 1rem;
+    /*le agregamos una transition a todas las propiedad(diferente-estado), velocidad de medio segundo .5s, aceleracion:ease*/
+    transition: all .5s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #009500;
+    border-color: transparent;
+}
+
+
+/*agregando estilos al boton de bajar*/
+
+.flecha-bajar a {
+    display: inline-block;
+    /*tenemos que agregar esto para que nos pueda funcionar la animacion*/
+    color: #fff;
+    font-size: 4rem;
+    /*agregamos animacion: con la que creamos mas abajo, el tiempo de duracion y la velocidad y que sea infinita q no pare*/
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+
+
+/*agregando animacion*/
+
+
+/*@keyframes: es la palabra clave para acceder a una animacion, identifer el nombre q le queramos poner a la animacion*/
+
+@keyframes flecha-animada {
+    from {
+        transform: translateY();
+        /*determina la ubicacion vertical y la iniciamos en 0*/
+    }
+    50% {
+        transform: translateY(6px);
+        /*ahora le decimos que baje un 6px*/
+    }
+    to {
+        /* la parte final la definimos con to y que cuando termine regrese al comienzo*/
+        transform: translateY(0);
+    }
+}
+
+
+/*****Seccion Agencia**********/
+
+.agencia {
+    background: #12afaf;
+    color: #fff;
+}
+
+.agencia img {
+    width: 80%;
+    /*para qme quede centrado*/
+    margin: 0 auto;
+    display: block;
+}
+
+
+/******Porque somos tu mejor eleccion*****/
+
+.tu-mejor-eleccion {}
+
+.tu-mejor-eleccion h2 span {
+    color: #12afaf;
+}
+
+.tu-mejor-eleccion ul,
+.tu-mejor-eleccion ul li {
+    /*elimna los punto de las lista*/
+    list-style: none;
+}
+
+.tu-mejor-eleccion ul li .fa {
+    font-size: 2.3rem;
+    /*todo lo siguiente para lograr un circulo perfecto*/
+    /*ya que hacerlo de la otra maera se distorciona el circulo*/
+    border-radius: 50%;
+    background: #009500;
+    width: 4.7rem;
+    height: 4.7rem;
+    line-height: 4.7rem;
+    color: #fff;
+}
+
+
+/*esta regla la hacemos para q todos los item tenga igual altura sin importar su texto*/
+
+.tu-mejor-eleccion ul li {
+    min-height: 9rem;
+    /**background: red;**/
+}
+
+.contenedor-eleccion h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: .8rem;
+}
